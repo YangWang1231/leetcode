@@ -36,38 +36,33 @@ public:
 
 FooBar	g_obj{ 100 };
 mutex	g_mutex;
-condition_variable g_cvar_foo;
-condition_variable g_cvar_bar;
-
-bool	g_flag_foo = true;
-bool	g_flag_bar = false;
+condition_variable g_cvar;
+bool	g_flag = true;
 
 void printFoo()
 {
 	unique_lock lck{ g_mutex };
-	g_cvar_foo.wait(lck, [] { return g_flag_foo == true; });
+	g_cvar.wait(lck, [] { return g_flag == true; });
 	printf("foo");
-	g_flag_foo = false;
-	g_flag_bar = true;
-	g_cvar_bar.notify_one();
+	g_flag = false;
+	g_cvar.notify_one();
 }
 
 void printBar()
 {
 	unique_lock lck{ g_mutex };
-	g_cvar_bar.wait(lck, [] {return g_flag_bar == true; });
+	g_cvar.wait(lck, [] {return g_flag == false; });
 	printf("bar");
-	g_flag_bar = false;
-	g_flag_foo = true;
-	g_cvar_foo.notify_one();
+	g_flag = true;
+	g_cvar.notify_one();
 }
 
 #include<thread>
-void main()
-{
-	thread t1(&FooBar::foo, &g_obj, printFoo);
-	thread t2(&FooBar::bar, &g_obj, printBar);
-
-	t1.join();
-	t2.join();
-}
+//void main()
+//{
+//	thread t1(&FooBar::foo, &g_obj, printFoo);
+//	thread t2(&FooBar::bar, &g_obj, printBar);
+//
+//	t1.join();
+//	t2.join();
+//}

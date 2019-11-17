@@ -125,8 +125,10 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="P1115.cpp" />
+    <ClCompile Include="P1117.cpp" />
     <ClCompile Include="P198.cpp" />
     <ClCompile Include="P213.cpp" />
+    <ClCompile Include="P32.cpp" />
     <ClCompile Include="P5.cpp" />
     <ClCompile Include="Regular_Expression_Matching.cpp" />
   </ItemGroup>
