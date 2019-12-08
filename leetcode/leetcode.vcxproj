@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -20,7 +20,7 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
-    <ProjectGuid>{B427E4B9-BA62-47CE-9F91-0967AC97FCBF}</ProjectGuid>
+    <ProjectGuid>{83A71F27-D1C4-45C7-9C79-ACC9A8D8AECB}</ProjectGuid>
     <RootNamespace>leetcode</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
@@ -69,7 +69,10 @@
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
-  <PropertyGroup />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <IncludePath>C:\boost\boost_1_71_0;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\boost\boost_1_71_0\stage\lib;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
@@ -124,13 +127,17 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="P1115.cpp" />
-    <ClCompile Include="P1117.cpp" />
-    <ClCompile Include="P198.cpp" />
-    <ClCompile Include="P213.cpp" />
-    <ClCompile Include="P32.cpp" />
-    <ClCompile Include="P5.cpp" />
-    <ClCompile Include="Regular_Expression_Matching.cpp" />
+    <ClCompile Include="..\P10.cpp" />
+    <ClCompile Include="..\P1115.cpp" />
+    <ClCompile Include="..\P1117.cpp" />
+    <ClCompile Include="..\P198.cpp" />
+    <ClCompile Include="..\P213.cpp" />
+    <ClCompile Include="..\P32.cpp" />
+    <ClCompile Include="..\P5.cpp" />
+    <ClCompile Include="P10_DP1.cpp" />
+    <ClCompile Include="P10_DP2.cpp" />
+    <ClCompile Include="P44.cpp" />
+    <ClCompile Include="test_futurn.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

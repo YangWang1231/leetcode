@@ -1,25 +1,39 @@
 #include<string>
 #include<algorithm>
+#include<utility>
 using namespace std;
 
 string gstring;
+bool first_find = true;
+int first_pos = 0;
+
 int find_longest_parenthese(int index)
 {
 	if (index >= gstring.length())
 		return 0;
 
+
 	if (gstring[index] == '(' && gstring[index + 1] == ')') {
+		if (first_find == true) {
+			first_find = false;
+			first_pos = index;
+		}
 		return 2 + find_longest_parenthese(index + 2);
 	}
 	else if (gstring[index] == '(' && gstring[index + 1] == '(') {
 		int result = find_longest_parenthese(index + 1);
-		if (result == 0) {
+		if (result == 0 || (index + result) == (gstring.length() - 1)) {
 			return 0;
 		}
 		else {
+			if (first_find == true) {
+				first_find = false;
+				first_pos = index;
+			}
 			if (gstring[index + result + 1] == ')') {
 				return 2 + result + find_longest_parenthese(index + result + 2);
 			}
+			return 0;
 		}
 	}
 	else
@@ -35,7 +49,14 @@ int longestValidParentheses(string s) {
 		int k = find_longest_parenthese(i);
 		if (k == 0)
 		{//从当前字符开始，不是well formatted
-			i++;
+			//i++; //每次推进1 太慢了
+			if (first_pos == 0){
+				i++;
+			}
+			else {
+				i = first_pos;
+				first_pos = 0;
+			}
 		}
 		else {
 			i += k;
@@ -44,9 +65,10 @@ int longestValidParentheses(string s) {
 	}
 
 	return max_length;
+
 }
 
-void main()
-{
-	int result = longestValidParentheses("((()))())");
-}
+//void main()
+//{
+//	int result = longestValidParentheses(")(((((()())()()))()(()))(");
+//}
