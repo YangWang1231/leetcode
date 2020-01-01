@@ -48,5 +48,29 @@
     <ClCompile Include="test_futurn.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="P344.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="P709.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="P905.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="P283.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="P973.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="P977.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="P961.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="P33.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

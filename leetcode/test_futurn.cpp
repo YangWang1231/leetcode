@@ -18,15 +18,15 @@ void accumulate(boost::promise<int>& p)
     p.set_value(sum);
 }
 
-int main()
-{
-    boost::future<int> f1 = async([]() { return 123; });
-    
-    boost::future<int> f2 = f1.then([](future<int> f) { return f.get() + 10; }); // here .get() won't block });
-    std::cout << "result is " << f2.get() << std::endl;
-
-    boost::promise<int> p;
-    boost::future<int> f = p.get_future();
-    boost::thread t{ accumulate, std::ref(p) };
-    std::cout << f.get() << '\n';
-}
+//int main()
+//{
+//    boost::future<int> f1 = async([]() { return 123; });
+//    
+//    boost::future<int> f2 = f1.then([](future<int> f) { return f.get() + 10; }); // here .get() won't block });
+//    std::cout << "result is " << f2.get() << std::endl;
+//
+//    boost::promise<int> p;
+//    boost::future<int> f = p.get_future();
+//    boost::thread t{ accumulate, std::ref(p) };
+//    std::cout << f.get() << '\n';
+//}

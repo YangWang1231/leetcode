@@ -136,7 +136,15 @@
     <ClCompile Include="..\P5.cpp" />
     <ClCompile Include="P10_DP1.cpp" />
     <ClCompile Include="P10_DP2.cpp" />
+    <ClCompile Include="P283.cpp" />
+    <ClCompile Include="P33.cpp" />
+    <ClCompile Include="P344.cpp" />
     <ClCompile Include="P44.cpp" />
+    <ClCompile Include="P709.cpp" />
+    <ClCompile Include="P905.cpp" />
+    <ClCompile Include="P961.cpp" />
+    <ClCompile Include="P973.cpp" />
+    <ClCompile Include="P977.cpp" />
     <ClCompile Include="test_futurn.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
