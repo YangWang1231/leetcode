@@ -81,5 +81,8 @@
     <ClCompile Include="test_move_semantic.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="test_async.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

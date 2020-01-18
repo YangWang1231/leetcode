@@ -146,6 +146,7 @@
     <ClCompile Include="P961.cpp" />
     <ClCompile Include="P973.cpp" />
     <ClCompile Include="P977.cpp" />
+    <ClCompile Include="test_async.cpp" />
     <ClCompile Include="test_futurn.cpp" />
     <ClCompile Include="test_move_semantic.cpp" />
     <ClCompile Include="test_stl.cpp" />
