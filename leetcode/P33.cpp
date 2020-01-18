@@ -25,12 +25,12 @@ int search(vector<int>& nums, int target) {
 	return -1;
 }
 
-void main()
-{
-	int target = 1;
-	vector<int> input{ 1 };
-
-	int index = search(input, target);
-
-	cout << index;
-}
+//void main()
+//{
+//	int target = 1;
+//	vector<int> input{ 1 };
+//
+//	int index = search(input, target);
+//
+//	cout << index;
+//}

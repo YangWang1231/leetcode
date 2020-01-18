@@ -142,10 +142,13 @@
     <ClCompile Include="P44.cpp" />
     <ClCompile Include="P709.cpp" />
     <ClCompile Include="P905.cpp" />
+    <ClCompile Include="P917.cpp" />
     <ClCompile Include="P961.cpp" />
     <ClCompile Include="P973.cpp" />
     <ClCompile Include="P977.cpp" />
     <ClCompile Include="test_futurn.cpp" />
+    <ClCompile Include="test_move_semantic.cpp" />
+    <ClCompile Include="test_stl.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

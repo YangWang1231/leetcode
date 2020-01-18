@@ -72,5 +72,14 @@
     <ClCompile Include="P33.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="P917.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="test_stl.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="test_move_semantic.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
