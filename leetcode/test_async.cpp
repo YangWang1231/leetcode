@@ -112,6 +112,9 @@ namespace test_async {
 		friend std::ostream& operator << (std::ostream& os, const CMessage&);
 		CMessage(string& msg, int properity, std::chrono::milliseconds cost):m_msg(msg),m_task_properity(properity),m_cost(cost) {}
 		~CMessage();
+		bool operator < (const CMessage& b) {
+			return this->m_task_properity > b.m_task_properity;
+		}
 
 	public:
 		string m_msg;
@@ -139,6 +142,7 @@ namespace test_async {
 		void send_message(const CMessage& msg) {
 			std::scoped_lock lck{ m_mutex };
 			m_message_q.push_back(msg);
+			std::push_heap(m_message_q.begin(), m_message_q.end());
 			m_cond.notify_one();
 		}
 
@@ -146,8 +150,11 @@ namespace test_async {
 			std::unique_lock lck{ m_mutex };
 			m_cond.wait(lck, [this] {return !m_message_q.empty(); });
 
-			auto m = m_message_q.front();
-			m_message_q.pop_front();
+			
+			std::pop_heap(m_message_q.begin(), m_message_q.end());
+			auto m = m_message_q.back();
+			m_message_q.pop_back();
+			//m_message_q.pop_front();
 
 			return std::move(m);
 		}
@@ -170,7 +177,8 @@ namespace test_async {
 	private:
 		std::condition_variable	m_cond;
 		mutex			m_mutex;
-		deque<CMessage> m_message_q;
+		//deque<CMessage> m_message_q;
+		vector<CMessage>	m_message_q;
 	};
 
 	CMessageQueue::~CMessageQueue()
